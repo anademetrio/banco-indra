@@ -1,0 +1,38 @@
+.navbar-collapse {
+    position: relative;
+}
+.form-search {
+    input {
+        position: absolute;
+        right: 36%;
+        width: 0%;
+        z-index: -1;
+        transition: all 0.5s;
+        &.show{
+            z-index: 10;
+            width: 63%;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .navbar-collapse{
+        .botoes {
+            margin: 1rem 0;
+            a {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    .form-search {
+        input {
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            right: auto;
+            +button{
+                display: none;
+            }
+        }
+    }
+}

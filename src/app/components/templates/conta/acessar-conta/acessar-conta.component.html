@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row flex-row-reverse bd-highlight">
+        <app-banner color="primary"></app-banner>
+        <div class="col-md-6">
+            <div class="logo">
+                <h1 class="text-primary">Banco Indra</h1>
+            </div>
+            <h5 class="text-secondary mb-3">Acesse sua conta:</h5>
+            <form #f="ngForm" (ngSubmit)="sendForm(f)">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="">Agencia</label>
+                            <input type="text" class="form-control" placeholder="0000" mask="0000" required
+                                name="agencia" ngModel #agencia="ngModel">
+                            <small class="text-danger" *ngIf="!agencia.valid && (agencia.dirty || agencia.touched)">Por
+                                favar digite o numero da sua agencia.</small>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="">Conta</label>
+                            <input type="text" class="form-control" placeholder="00000-0" mask="00000-0" required
+                                name="conta" ngModel #conta="ngModel">
+                            <small class="text-danger" *ngIf="!conta.valid && (conta.dirty || conta.touched)">Por favar
+                                digite o numero da sua conta.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Senha</label>
+                    <input type="password" class="form-control" required minlength="6" maxlength="8" name="password"
+                        ngModel #password="ngModel">
+                    <small class="text-danger" *ngIf="!password.valid && (password.dirty || password.touched)">Por favar
+                        digite a sua senha.</small>
+                </div>
+                <button type="submit" class="btn btn-block btn-secondary" [disabled]="!f.valid">Entrar</button>
+            </form>
+            <a href="#" class="info text-center my-3 text-dark btn-block">Precisa de ajuda?</a>
+        </div>
+    </div>
+</div>
+<div class="loading" *ngIf="loading">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="row flex-row-reverse bd-highlight">
+        <app-banner color="secondary"></app-banner>
+        <div class="col-md-6">
+            <div class="logo">
+                <h1 class="text-primary">Banco Indra</h1>
+            </div>
+            <h5 class="text-secondary mb-3">Crie sua conta:</h5>
+            <form #f="ngForm" (ngSubmit)="sendForm(f)">
+                <div class="form-group">
+                    <label>Nome:</label>
+                    <input type="text" class="form-control" required minlength="3" maxlength="100" name="nome" ngModel #nome="ngModel">
+                    <small class="text-danger" *ngIf="!nome.valid && (nome.dirty || nome.touched)">O campo nome deve conter no minimo 3 e no maximo 100 caracteres.</small>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label>CPF:</label>
+                            <input type="text" class="form-control" mask="000.000.000-00" required name="cpf" ngModel #cpf="ngModel">
+                            <small class="text-danger" *ngIf="!cpf.valid && (cpf.dirty || cpf.touched)">O campo cpf é obrigatorio.</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Celular:</label>
+                            <input type="text" class="form-control" mask="(00) 0000-00009" required name="celular" ngModel #celular="ngModel">
+                            <small class="text-danger" *ngIf="!celular.valid && (celular.dirty || celular.touched)">O campo celular é obrigatorio.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label>E-mail:</label>
+                            <input type="email" class="form-control" required name="email" ngModel #email="ngModel">
+                            <small class="text-danger" *ngIf="!email.valid && (email.dirty || email.touched)">
+                                Por favor digite um email valido.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Data de Nascimento:</label>
+                            <input type="date" class="form-control" required name="data_nascimento" ngModel #data_nascimento="ngModel">
+                            <small class="text-danger" *ngIf="!data_nascimento.valid && (data_nascimento.dirty || data_nascimento.touched)">
+                                Por favor informe a data de nascimento.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Senha:</label>
+                            <input type="password" class="form-control" required minlength="6" maxlength="8" name="password" ngModel #password="ngModel">
+                            <small class="text-danger" *ngIf="!password.valid && (password.dirty || password.touched)">
+                                O campo senha deve conter de 6 a 8 caracteres.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Confirme sua senha:</label>
+                            <input type="password" class="form-control" minlength="6" maxlength="8" required name="confirm_password" ngModel #confirm_password="ngModel">
+                            <small class="text-danger" *ngIf="confirm_password.value !== password.value && (confirm_password.dirty || confirm_password.touched)">
+                                As senhas nao correspondem.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="1" id="termos" required name="termos" ngModel #termos="ngModel">
+                        <label class="form-check-label" for="termos">
+                            Aceito os termos de seguraça
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="1" id="sms" name="info" ngModel #info="ngModel">
+                        <label class="form-check-label" for="sms">
+                            Desejo receber mais informaçoes sobre investimento via SMS ou E-mail
+                        </label>
+                    </div>
+                    <small class="text-danger" *ngIf="!termos.valid && confirm_password.valid">
+                        Voce deve aceitar os termos de segurança para continuar
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-block btn-secondary" [disabled]="!f.valid || confirm_password.value !== password.value ">Enviar</button>
+            </form>
+            <a href="#" class="info text-center my-3 text-dark btn-block">Precisa de ajuda?</a>
+        </div>
+    </div>
+</div>
+<div class="loading" *ngIf="loading">
+    <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>

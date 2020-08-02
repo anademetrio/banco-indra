@@ -1,0 +1,43 @@
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand">Banco Indra</a>
+    <a [routerLink]="['/home']" class="btn btn-secondary text-white">Sair</a>
+</nav>
+<div class="container my-5">
+    <h5 class="text-dark">Bem vindo(a) ao Banco Indra!</h5>
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Minha Conta</h5>
+                    <p class="card-text">Saldo disponivel: R$550,00</p>
+                    <p class="card-text">Limite disponivel: R$1.500,00</p>
+                    <a href="#" class="btn btn-primary btn-sm">Saiba mais</a>
+                    <hr>
+                    <h5 class="card-title">Dicas de segurança</h5>
+                    <p class="card-text">Ativar token de segurança</p>
+                    <a href="#" class="btn btn-primary btn-sm">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="card">
+                <h5 class="card-header">Cartoes</h5>
+                <div class="card-body">
+                    <p class="card-text">Fatura: R$550,00</p>
+                    <a href="#" class="btn btn-primary btn-sm">Saiba mais</a>
+                </div>
+            </div>
+            <div class="card mt-3">
+                <h5 class="card-header">Meus Investimentos</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Poupança: R$550,00</li>
+                    <li class="list-group-item">Tesouro Direto: R$1.500,00</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary btn-sm">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

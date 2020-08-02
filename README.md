@@ -1,27 +1,50 @@
 # BancoIndra
+Teste vaga Programador FrontEnd:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+Criação de uma pagina de abertura de conta online no banco: Banco Indra 
+(Usar o thema de cores com referencia no ITAU)
 
-## Development server
+Pode utilizar:
+· Angular - preferencialmente
+· Javascript
+· HTML5, CSS
+· Bootstrap
+· MVC
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+O interface deve apresentar:
+* Menu superior estatico
+* Uma imagem central
 
-## Code scaffolding
+Menu superior contendo:
+* Institucional
+* Produtos
+* Banco Indra para você
+* Cartões
+* Pesquisar
+* Botões: Acesse sua conta && Abrir minha conta
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+------------------------------------------------------------------------------------
 
-## Build
+Acesse sua conta – Login direcionado para uma pagina de entrada contendo:
+* Agencia
+* Conta
+* O botão entrar
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+------------------------------------------------------------------------------------
 
-## Running unit tests
+Abrir minha conta, contendo os campos:
+* Nome
+* CPF
+* Celular
+* E-mail
+* Data de nascimento
+* Senha (de 6 a 8 digitos)
+* Confime sua senha
+* Check box:
+    * Aceito termos
+    * Desejo receber mais informações sobre investimentos via SMS ou e-mail
+* Botão “Enviar”
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+-----------------------------------------------------------------------------------
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Espero que gostem, obrigada.
